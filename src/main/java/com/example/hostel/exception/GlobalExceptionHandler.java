@@ -1,6 +1,6 @@
 package com.example.hostel.exception;
 
-import com.college.hostel.exception.ResourceNotFoundException;
+import com.example.hostel.exception.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
