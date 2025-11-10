@@ -6,6 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.example.hostel.Entity.Hostel;
 import com.example.hostel.Entity.Student;
@@ -26,10 +28,21 @@ public class HostelController {
 
     private final HostelRepo hostelRepo;
     private final StudentRepo studentRepo;
+    private static final Logger logger = LoggerFactory.getLogger(HostelController.class);
 
     public HostelController(HostelRepo hostelRepo, StudentRepo studentRepo) {
         this.hostelRepo = hostelRepo;
         this.studentRepo = studentRepo;
+    }
+    
+    @GetMapping("/logger")
+    public List<Student> getName() {
+        logger.info("success INFO");
+        logger.debug("fetching all users DEBUG");
+        logger.error("fialed ERROR");
+        logger.warn("WARN");
+        logger.trace("TRACE");
+        return studentRepo.findAll();
     }
 
     @GetMapping("/")
