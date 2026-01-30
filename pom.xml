@@ -30,6 +30,12 @@
 		<java.version>21</java.version>
 	</properties>
 	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
 		<!-- Dependency for swagger. Need to add dependency only. Access the user interace on http://localhost:8080/swagger-ui/index.html -->
 		<dependency>
 			<groupId>org.springdoc</groupId>
